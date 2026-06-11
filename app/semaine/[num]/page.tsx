@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import PhaseTag from '@/components/PhaseTag';
 import IntensityBar from '@/components/IntensityBar';
 import SessionTypeIcon from '@/components/SessionTypeIcon';
+import SessionProgressBadge from '@/components/SessionProgressBadge';
 import { programme, SESSION_TYPE_LABELS, INTENSITY_LABELS, KNEE_LOAD_LABELS } from '@/lib/programme';
 
 export function generateStaticParams() {
@@ -94,6 +95,12 @@ export default async function SemainePage({ params }: { params: Promise<{ num: s
                       ⚠️ {session.warnings[0]}
                     </div>
                   )}
+
+                  <SessionProgressBadge
+                    semaine={week.number}
+                    jour={idx}
+                    blocks={session.blocks}
+                  />
                 </Link>
               );
             })}

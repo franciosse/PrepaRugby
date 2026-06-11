@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import PhaseTag from '@/components/PhaseTag';
 import IntensityBar from '@/components/IntensityBar';
 import SessionTypeIcon from '@/components/SessionTypeIcon';
+import OverallProgress from '@/components/OverallProgress';
 import { programme, ATHLETE, PHASES, SESSION_TYPE_LABELS } from '@/lib/programme';
 
 export default function Home() {
@@ -74,6 +75,9 @@ export default function Home() {
             ))}
           </ul>
         </section>
+
+        {/* Progression globale */}
+        <OverallProgress />
 
         {/* Phases du programme */}
         <section>

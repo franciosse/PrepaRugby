@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import PhaseTag from '@/components/PhaseTag';
 import IntensityBar from '@/components/IntensityBar';
 import SessionTypeIcon from '@/components/SessionTypeIcon';
+import SessionChecklist from '@/components/SessionChecklist';
 import { programme, SESSION_TYPE_LABELS, INTENSITY_LABELS, KNEE_LOAD_LABELS } from '@/lib/programme';
 
 export function generateStaticParams() {
@@ -35,8 +36,6 @@ export default async function SeancePage({
 
   const prevSession = sessionIdx > 0 ? week.sessions[sessionIdx - 1] : null;
   const nextSession = sessionIdx < week.sessions.length - 1 ? week.sessions[sessionIdx + 1] : null;
-
-  const totalExercises = session.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
 
   return (
     <div className="min-h-screen">
@@ -90,7 +89,9 @@ export default async function SeancePage({
             </div>
             <div className="bg-black/20 rounded-lg p-3 text-center">
               <div className="text-xs text-gray-500 mb-1">Exercices</div>
-              <div className="text-sm font-bold text-white">{totalExercises} exercices</div>
+              <div className="text-sm font-bold text-white">
+                {session.blocks.reduce((s, b) => s + b.exercises.length, 0)} exercices
+              </div>
             </div>
           </div>
         </section>
@@ -112,70 +113,12 @@ export default async function SeancePage({
           </section>
         )}
 
-        {/* Blocs d'exercices */}
-        <section className="space-y-4">
-          {session.blocks.map((block, blockIdx) => (
-            <div key={blockIdx} className="rounded-xl border border-gray-800 bg-gray-950/40 overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-800 bg-gray-900/40">
-                {block.emoji && <span className="text-lg">{block.emoji}</span>}
-                <h3 className="font-bold text-gray-200">{block.title}</h3>
-                <span className="text-xs text-gray-600 font-mono ml-auto">{block.exercises.length} exercice{block.exercises.length > 1 ? 's' : ''}</span>
-              </div>
-
-              <div className="divide-y divide-gray-900">
-                {block.exercises.map((exercise, exIdx) => (
-                  <div
-                    key={exIdx}
-                    className={`px-4 py-3 ${exercise.kneeWarning ? 'border-l-2 border-l-amber-600' : ''}`}
-                  >
-                    <div className="flex items-start justify-between gap-3 flex-wrap">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-semibold text-white text-sm">{exercise.name}</span>
-                          {exercise.kneeWarning && (
-                            <span className="text-xs bg-amber-900/50 text-amber-400 border border-amber-800 rounded px-1.5 py-0.5">
-                              🦵 Genou
-                            </span>
-                          )}
-                        </div>
-                        {exercise.note && (
-                          <p className="text-xs text-gray-500 mt-0.5 italic">{exercise.note}</p>
-                        )}
-                      </div>
-
-                      <div className="flex items-center gap-3 shrink-0">
-                        {exercise.sets && (
-                          <div className="text-center">
-                            <div className="text-lg font-black text-emerald-400 leading-none">{exercise.sets}</div>
-                            <div className="text-xs text-gray-600 font-mono">séries</div>
-                          </div>
-                        )}
-                        {exercise.reps && (
-                          <div className="text-center">
-                            <div className="text-sm font-bold text-white leading-none">{exercise.reps}</div>
-                            <div className="text-xs text-gray-600 font-mono">reps</div>
-                          </div>
-                        )}
-                        {exercise.duration && (
-                          <div className="text-center">
-                            <div className="text-sm font-bold text-sky-400 leading-none">{exercise.duration}</div>
-                            <div className="text-xs text-gray-600 font-mono">durée</div>
-                          </div>
-                        )}
-                        {exercise.rest && (
-                          <div className="text-center">
-                            <div className="text-xs font-semibold text-gray-500 leading-none">{exercise.rest}</div>
-                            <div className="text-xs text-gray-700 font-mono">repos</div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </section>
+        {/* Checklist interactive (client component) */}
+        <SessionChecklist
+          semaine={week.number}
+          jour={sessionIdx}
+          blocks={session.blocks}
+        />
 
         {/* Conseils */}
         {session.tips && session.tips.length > 0 && (
