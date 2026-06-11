@@ -61,12 +61,12 @@ export default function Home() {
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-amber-200/80">
             {[
-              'Séances marquées 🔴 = genou sollicité → surveiller douleur',
-              'Toujours glaçage post-séance si chaleur ou gonflement',
-              'Amplitude réduite les 2 premières semaines sur squats/fentes',
-              'Aucun pivot brusque ni changement direction rapide avant S3',
-              'En cas de douleur aiguë : stopper et consulter le kiné',
-              'Valider chaque phase avec le kinésithérapeute suivi',
+              'Reprise course validée ✅ – programme adapté à ce niveau de récupération',
+              'Séances marquées 🔴 = genou fortement sollicité → surveiller douleur aiguë',
+              'Glaçage post-séance si sensation de chaleur ou gonflement',
+              'Squats/fentes : amplitude contrôlée en S1, pleine amplitude dès S2 si OK',
+              'Changements de direction : progressifs dès S2-S3 (virages larges d\'abord)',
+              'Douleur aiguë ou instabilité = stopper et consulter le kiné',
             ].map((rule, i) => (
               <li key={i} className="flex items-start gap-2">
                 <span className="text-amber-500 mt-0.5 shrink-0">›</span>
