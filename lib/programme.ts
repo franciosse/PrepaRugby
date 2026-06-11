@@ -38,7 +38,7 @@ export const programme: Week[] = [
             title: 'Footing principal',
             emoji: '🏃',
             exercises: [
-              { name: 'Footing continu', duration: '25 min', note: '65–70% FCmax (130–145 bpm) – allure conversation', kneeWarning: true },
+              { name: 'Footing continu', duration: '25 min', note: '65–70% VMA = 10.4–11.2 km/h (5:20–5:46/km) – allure conversation', kneeWarning: true },
             ],
           },
           {
@@ -305,8 +305,8 @@ export const programme: Week[] = [
             title: 'Footing avec variations',
             emoji: '🏃',
             exercises: [
-              { name: 'Footing continu 70% FCmax', duration: '20 min', kneeWarning: true },
-              { name: 'Fartlek : 5× (1 min à 80% / 2 min à 65%)', duration: '15 min', note: 'Variations d\'allure fluides', kneeWarning: true },
+              { name: 'Footing continu 70% VMA', duration: '20 min', note: '11.2 km/h – allure 5:21/km', kneeWarning: true },
+              { name: 'Fartlek : 5× (1 min à 80% / 2 min à 65%)', duration: '15 min', note: 'Effort 80% = 12.8 km/h (4:41/km) · Récup 65% = 10.4 km/h (5:46/km)', kneeWarning: true },
             ],
           },
           {
@@ -621,6 +621,15 @@ export const programme: Week[] = [
               { name: 'Hanging knee raises (barre de traction)', sets: 3, reps: '15' },
             ],
           },
+          {
+            title: 'Spécifique 3ème ligne – Contact & Grip',
+            emoji: '🏉',
+            exercises: [
+              { name: 'Grip serviette (serviette enroulée sur barre de traction)', sets: 3, duration: '30s', note: 'Préhension pour plaquage, ruck et maul' },
+              { name: 'Renforcement cou (4 directions – résistance main)', sets: 2, reps: '10 chaque direction', note: 'Sécurité en plaquage et en mêlée' },
+              { name: 'Position jackal isométrique (pont bras tendus, dos plat)', sets: 3, duration: '20s', note: 'Simulation gratteur – pousser vers l\'avant depuis les appuis' },
+            ],
+          },
         ],
         tips: ['Temps sous tension : descente 3s, poussée rapide', 'Progression obligatoire sur développé couché'],
       },
@@ -656,6 +665,14 @@ export const programme: Week[] = [
             exercises: [
               { name: 'L-drill simplifié (virage large 135°)', sets: 6, reps: '1 rep', rest: '90s', note: 'Virage côté sain en premier', kneeWarning: true },
               { name: 'Shuttle run 5-5 (1 côté à la fois)', sets: 5, reps: '1 rep', rest: '90s', kneeWarning: true },
+            ],
+          },
+          {
+            title: 'Spécifique Centre – Step & Changement de rythme',
+            emoji: '⚡',
+            exercises: [
+              { name: 'Step-drill cônes (amorce + changement pied d\'appui)', sets: 4, reps: '5 reps', rest: '60s', note: 'Centre : travail du crochet/step de match', kneeWarning: true },
+              { name: 'Feinte de vitesse + accélération 25m', sets: 5, reps: '25m', rest: '90s', note: 'Centre : ralentir 3 foulées + explosion – simulation contre en match', kneeWarning: true },
             ],
           },
           {
@@ -796,7 +813,7 @@ export const programme: Week[] = [
             title: 'Intervals VMA',
             emoji: '📊',
             exercises: [
-              { name: 'Interval 3 min à 78–82% FCmax / 2 min récup trot', sets: 6, reps: '3 min effort', rest: '2 min', note: 'FC effort : 155–170 bpm', kneeWarning: true },
+              { name: 'Interval 3 min à 80% VMA / 2 min récup trot', sets: 6, reps: '3 min effort', rest: '2 min', note: 'Pace effort : 12.8 km/h (4:41/km) – FC 155–170 bpm – ~640m couverts par répétition', kneeWarning: true },
             ],
           },
           {
@@ -852,6 +869,15 @@ export const programme: Week[] = [
               { name: 'L-sit (dips ou sol)', sets: 3, duration: '15s' },
             ],
           },
+          {
+            title: 'Spécifique postes – 3ème ligne & Centre',
+            emoji: '🏉',
+            exercises: [
+              { name: 'Grip serviette (barre de traction)', sets: 3, duration: '35s', note: '3ème ligne : force de préhension contact' },
+              { name: 'Renforcement cou (4 directions)', sets: 2, reps: '12 chaque direction', note: '3ème ligne : stabilité cervicale en plaquage' },
+              { name: 'Pompes explosives + rebond latéral', sets: 3, reps: '8', note: 'Centre : réactivité et changement de direction bras' },
+            ],
+          },
         ],
         tips: ['Complexes force-puissance = transfert rugbystique direct'],
       },
@@ -879,6 +905,7 @@ export const programme: Week[] = [
             exercises: [
               { name: 'Sprint 30m', sets: 5, reps: '30m', rest: '2 min', kneeWarning: true },
               { name: 'Sprint 40m', sets: 6, reps: '40m', rest: '2 min 30', kneeWarning: true },
+              { name: 'Sprint 60m – Centre (distance décisive de match)', sets: 4, reps: '60m', rest: '3 min', note: 'Récupération complète – effort maximal', kneeWarning: true },
             ],
           },
           {
@@ -887,7 +914,7 @@ export const programme: Week[] = [
             exercises: [
               { name: 'L-drill (cônes en L)', sets: 6, reps: '1 rep', rest: '90s', kneeWarning: true },
               { name: 'Shuttle run 5-10-5', sets: 5, reps: '1 rep', rest: '90s', kneeWarning: true },
-              { name: 'Départ position rugby (3 appuis) + sprint 15m', sets: 5, reps: '15m', rest: '90s' },
+              { name: 'Départ position rugby (3 appuis) + sprint 15m – 3ème ligne', sets: 5, reps: '15m', rest: '90s', note: '3ème ligne : départ rapide depuis le sol/ruck' },
             ],
           },
           {
@@ -1018,8 +1045,9 @@ export const programme: Week[] = [
             title: 'Fartlek ou Intervals 400m',
             emoji: '📊',
             exercises: [
-              { name: 'Fartlek 35 min', duration: '35 min', note: '2 min à 82% / 1 min à 60% – inclure des phases sprint 10s', kneeWarning: true },
-              { name: 'Ou 8×400m à 85% VMA', sets: 8, reps: '400m', rest: '1 min 30', kneeWarning: true },
+              { name: 'Option A – Fartlek 35 min', duration: '35 min', note: '2 min à 82% (13.1 km/h · 4:35/km) · 1 min récup 60% (9.6 km/h) · sprints 10s à 16 km/h', kneeWarning: true },
+              { name: 'Option B – 8×400m à 85–90% VMA', sets: 8, reps: '400m', rest: '1 min 30', note: 'Temps cible : 1:46 à 85% (13.6 km/h) · 1:40 à 90% (14.4 km/h)', kneeWarning: true },
+              { name: 'Option C – 30-30 intermittent (avancé)', sets: 12, reps: '133m en 30s / 30s repos passif', note: '100% VMA = 16 km/h · 12 à 15 reps · Très spécifique rugby', kneeWarning: true },
             ],
           },
           {
@@ -1075,6 +1103,15 @@ export const programme: Week[] = [
               { name: 'Planche lestée', sets: 3, duration: '45s' },
             ],
           },
+          {
+            title: 'Spécifique postes – Contact & Vitesse',
+            emoji: '🏉',
+            exercises: [
+              { name: 'Grip serviette (max duration)', sets: 3, duration: '40s', note: '3ème ligne : surcharge fonctionnelle plaquage/ruck' },
+              { name: 'Renforcement cou lourd (élastique ou charge légère)', sets: 3, reps: '12 chaque direction', note: '3ème ligne : stabilité maximale au contact' },
+              { name: 'Fente latérale + accélération 10m', sets: 4, reps: '10m', rest: '60s', note: 'Centre : sortie de step en accélération' },
+            ],
+          },
         ],
         tips: ['5×5 = protocole optimal force maximale', 'Repos complet entre les séries (2–3 min)'],
       },
@@ -1100,16 +1137,18 @@ export const programme: Week[] = [
             title: 'Vitesse maximale',
             emoji: '⚡',
             exercises: [
-              { name: 'Sprint 40m (récupération complète 2 min 30)', sets: 10, reps: '40m', rest: '2 min 30', note: 'MAXIMALE – chronométrer', kneeWarning: true },
+              { name: 'Sprint 40m (récupération complète 2 min 30)', sets: 8, reps: '40m', rest: '2 min 30', note: 'MAXIMALE – chronométrer chaque effort', kneeWarning: true },
+              { name: 'Sprint 60m – Centre (distance de match décisive)', sets: 4, reps: '60m', rest: '3 min', note: 'Centre : vitesse de pointe sur distance décisive', kneeWarning: true },
             ],
           },
           {
-            title: 'Agilité rugby',
+            title: 'Agilité & Spécifique postes',
             emoji: '🏉',
             exercises: [
-              { name: 'T-drill (4 cônes en T)', sets: 6, reps: '1 rep', rest: '90s', note: 'Temps cible <10s avants / <9.5s arrières', kneeWarning: true },
-              { name: 'Zig-zag cônes (5m espacement)', sets: 6, reps: '25m', rest: '90s', kneeWarning: true },
-              { name: 'Départ balle en main + sprint 20m', sets: 5, reps: '20m', rest: '90s' },
+              { name: 'T-drill (4 cônes en T)', sets: 6, reps: '1 rep', rest: '90s', note: 'Temps cible : < 10s avants · < 9.5s arrières', kneeWarning: true },
+              { name: 'Zig-zag cônes + step final – Centre', sets: 6, reps: '25m', rest: '90s', note: 'Centre : finir chaque séquence par un crochet extérieur', kneeWarning: true },
+              { name: 'Jackal position → sprint réactif 10m – 3ème ligne', sets: 4, reps: '10m', rest: '60s', note: '3ème ligne : se relever du grattage + sprint de relance' },
+              { name: 'Départ balle en main + sprint 20m – 3ème ligne', sets: 5, reps: '20m', rest: '90s', note: '3ème ligne : simulation carry depuis ruck' },
             ],
           },
           {
@@ -1444,7 +1483,51 @@ export const ATHLETE = {
   goals: ['Foncier (endurance)', 'Vitesse', 'Force', 'Puissance'],
   weeks: 6,
   sessionsPerWeek: 5,
+  vma: 16,
+  positions: ['Troisième ligne', 'Centre'],
 };
+
+/** Zones d'allure calculées sur VMA = 16 km/h */
+export const VMA_PACES = [
+  { label: 'Récupération', pct: 60, kmh: 9.6,  pace: '6:15/km', use: 'Récup active entre séries' },
+  { label: 'Aérobie léger', pct: 65, kmh: 10.4, pace: '5:46/km', use: 'Footing facile (S1-S2)' },
+  { label: 'Aérobie base',  pct: 70, kmh: 11.2, pace: '5:21/km', use: 'Footing continu (S2-S4)' },
+  { label: 'Tempo',         pct: 75, kmh: 12.0, pace: '5:00/km', use: 'Fartlek effort modéré' },
+  { label: 'Seuil',         pct: 80, kmh: 12.8, pace: '4:41/km', use: 'Intervals 3 min (S3-S4)' },
+  { label: 'VMA 85%',       pct: 85, kmh: 13.6, pace: '4:25/km', use: '400m répétés (S4-S5)' },
+  { label: 'VMA 90%',       pct: 90, kmh: 14.4, pace: '4:10/km', use: '400m avancé (S5)' },
+  { label: 'VMA 100%',      pct: 100, kmh: 16.0, pace: '3:45/km', use: '30-30 intermittent (S5-S6)' },
+];
+
+/** Cible 30-30 intermittent : 133m à 16 km/h en 30s */
+export const INTERMITTENT_30_30 = { distance: 133, speedKmh: 16 };
+
+export const POSITIONS = [
+  {
+    id: 'troisieme-ligne',
+    label: 'Troisième ligne (6, 7, 8)',
+    icon: '⚡',
+    profile: 'Poste le plus exigeant physiquement. Endurance élevée, explosivité courte distance, force de contact maximale.',
+    keyQualities: ['Explosivité 0–10m', 'Force en contact (ruck/maul)', 'Endurance de haute intensité', 'Grip & préhension', 'Stabilité cervicale (plaquage)'],
+    vmaCible: '≥ 17–18 km/h à terme',
+    sprint40mCible: '< 5.8s',
+    specificWork: ['Jackal (gratteur)', 'Grip barre/serviette', 'Renforcement cou', 'Poussée contact (tackle bag)'],
+    colorClass: 'border-orange-700 bg-orange-950/30',
+    tagClass: 'bg-orange-900/40 text-orange-300 border-orange-700',
+  },
+  {
+    id: 'centre',
+    label: 'Centre (12, 13)',
+    icon: '🏃',
+    profile: 'Poste de vitesse et de percussion. Accélération explosive, lecture du jeu, step et changement de rythme.',
+    keyQualities: ['Vitesse maximale (40–60m)', 'Accélération 0–20m', 'Step & changement de direction', 'Percussion en ligne', 'Endurance intermittente'],
+    vmaCible: '≥ 17 km/h à terme',
+    sprint40mCible: '< 5.5s',
+    specificWork: ['Sprint 60m', 'Step-drill cônes', 'Feinte de vitesse', 'Percussion + offload'],
+    colorClass: 'border-sky-700 bg-sky-950/30',
+    tagClass: 'bg-sky-900/40 text-sky-300 border-sky-700',
+  },
+];
 
 export const PHASES = [
   {

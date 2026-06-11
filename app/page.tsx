@@ -4,6 +4,8 @@ import PhaseTag from '@/components/PhaseTag';
 import IntensityBar from '@/components/IntensityBar';
 import SessionTypeIcon from '@/components/SessionTypeIcon';
 import OverallProgress from '@/components/OverallProgress';
+import VMACard from '@/components/VMACard';
+import PositionCard from '@/components/PositionCard';
 import { programme, ATHLETE, PHASES, SESSION_TYPE_LABELS } from '@/lib/programme';
 
 export default function Home() {
@@ -30,12 +32,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-3">
               {[
                 { label: 'Âge', value: ATHLETE.age },
                 { label: 'Taille', value: ATHLETE.height },
                 { label: 'Poids', value: ATHLETE.weight },
-                { label: 'Contexte', value: 'Post-ménisque' },
+                { label: 'VMA', value: `${ATHLETE.vma} km/h` },
+                { label: 'Postes', value: '3L · CTR' },
               ].map(({ label, value }) => (
                 <div key={label} className="bg-emerald-950/40 border border-emerald-900/60 rounded-xl p-3">
                   <div className="text-xs text-emerald-600 font-mono uppercase tracking-wider">{label}</div>
@@ -75,6 +78,12 @@ export default function Home() {
             ))}
           </ul>
         </section>
+
+        {/* Profil de jeu */}
+        <PositionCard />
+
+        {/* Zones VMA */}
+        <VMACard />
 
         {/* Progression globale */}
         <OverallProgress />
